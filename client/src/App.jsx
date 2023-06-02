@@ -3,6 +3,8 @@ import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
 
+const ws = new WebSocket("ws://localhost:3000/cable")
+
 function App() {
   const [messages, setMessages] = useState([]);
   const [guid, setGuid] = useState("");
