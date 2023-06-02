@@ -5,6 +5,7 @@ import './App.css'
 
 function App() {
   const [messages, setMessages] = useState([]);
+  const [guid, setGuid] = useState("");
 
   return (
     <div className="App">
