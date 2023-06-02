@@ -9,6 +9,11 @@ function App() {
   const [messages, setMessages] = useState([]);
   const [guid, setGuid] = useState("");
 
+  ws.onopen = () => {
+    console.log("Connected to websocket server");
+    setGuid(Math.random().toString(36).substring(2,15));
+  }
+
   return (
     <div className="App">
       <div className="messageHeader">
