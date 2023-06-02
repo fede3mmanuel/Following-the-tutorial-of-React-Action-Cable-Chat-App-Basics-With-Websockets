@@ -9,7 +9,10 @@ function App() {
 
   return (
     <div className="App">
-
+      <div className="messageHeader">
+        <h1>Messages</h1>
+        <p>Guid: {guid}</p>
+      </div>
     </div>
   )
 }
