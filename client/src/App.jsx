@@ -30,7 +30,7 @@ function App() {
   }, [])
 
   const fetchMessages = async () => {
-    const response = await fetch("ws://localhost:3000/messages")
+    const response = await fetch("http://localhost:3000/messages")
     const data = await response.json();
     setMessagesAndScrollDown(data);
   }
