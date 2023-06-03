@@ -37,6 +37,7 @@ function App() {
 
   const setMessagesAndScrollDown = (data) => {
     setMessages(data);
+    if(!messagesContainer) return;
     messagesContainer.scrollTop = messagesContainer.scrollHeight;
   }
   return (
