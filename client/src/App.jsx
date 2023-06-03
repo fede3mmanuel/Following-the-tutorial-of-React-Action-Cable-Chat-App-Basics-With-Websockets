@@ -29,6 +29,19 @@ function App() {
     fetchMessages();
   }, [])
 
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    const body = e.target.message.value;
+    e.target.message.value = "";
+    await fetch("http://localhost:3000/messages", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ body}),
+    });
+  }
+
   const fetchMessages = async () => {
     const response = await fetch("http://localhost:3000/messages")
     const data = await response.json();
@@ -52,6 +65,14 @@ function App() {
             <p>{message.body}</p>
           </div>
         ))}
+      </div>
+      <div className='messageForm'>
+        <form onSubmit={handleSubmit}>
+          <input className='messageInput' type='text' name='message' />
+          <button className='messageButton' type='submit'>
+            Send
+          </button>
+        </form>
       </div>
     </div>
   )
