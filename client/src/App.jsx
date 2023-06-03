@@ -47,7 +47,7 @@ function App() {
       </div>
       <div className='messages' id='messages'>
         {messages.map((message) => (
-          <div className='message' key={message.guid}>
+          <div className='message' key={message.id}>
             <p>{message.body}</p>
           </div>
         ))}
