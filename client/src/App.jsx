@@ -25,6 +25,17 @@ function App() {
     )
   }
 
+  ws.onmessage = (e) => {
+    const data = JSON.parse(e.data);
+    if (data.type == "ping") return;
+    if (data.type == "welcome") return;
+    if (data.type == "confirm_subscription") return;
+
+    const message = data.message;
+
+    setMessagesAndScrollDown([...messages, message])
+  }
+
   useEffect(() => {
     fetchMessages();
   }, [])
